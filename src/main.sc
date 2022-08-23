@@ -7,34 +7,34 @@ theme: /
         script:
             $context.name = {};
             $context.mail = {};
-        go!: /RegisterUser
+        #go!: /RegisterUser
 
     
-    state: RegisterUser || modal = true
-        a: Здаровати! 🤗
-        buttons:
-            "Здаровати!" -> /WhatsYourName
+    # state: RegisterUser || modal = true
+    #     a: Здаровати! 🤗
+    #     buttons:
+    #         "Здаровати!" -> /WhatsYourName
             
             
-        state: WhatsYourName
-            a: Напишите ваше имя
-            q: *
-            go!: /RememberName
+    #     state: WhatsYourName
+    #         a: Напишите ваше имя
+    #         q: *
+    #         go!: ./RememberName
             
-            state: RememberName
-                script:
-                    $client.name = $request.query;
-                go!: /WhatsYourMail
+    #         state: RememberName
+    #             script:
+    #                 $client.name = $request.query;
+    #             go!: /RegisterUser/WhatsYourMail
     
-        state: WhatsYourMail
-            a: Напишите ваш email
-            q: *
-            go!: /RememberMail
+    #     state: WhatsYourMail
+    #         a: Напишите ваш email
+    #         q: *
+    #         go!: ./RememberMail
             
-            state: RememberMail
-                script:
-                    $client.mail = $request.query;
-                go!: /Stupid
+    #         state: RememberMail
+    #             script:
+    #                 $client.mail = $request.query;
+    #             go!: /Stupid
 
     state: Stupid
         a: Ну все, больше я нихера не умею! 🤗
