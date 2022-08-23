@@ -2,34 +2,39 @@ require: slotfilling/slotFilling.sc
   module = sys.zb-common
 theme: /
 
-    state: Start || modal = true
+    state: Start
         q!: $regex</start>
         script:
             $context.name = {};
             $context.mail = {};
+        go!: /RegisterUser
+
+    
+    state: RegisterUser || modal = true
         a: Здаровати! 🤗
         buttons:
-            "Здаровати!" -> ./WhatsYourName
+            "Здаровати!" -> /WhatsYourName
             
-    state: WhatsYourName
-    a: Напишите ваше имя
-    q: *
-    go!: /RememberName
-        
-        state: RememberName
-            script:
-                $client.name = $request.query;
-            go!: /WhatsYourMail
-
-    state: WhatsYourMail
-    a: Напишите ваш email
-    q: *
-    go!: /RememberMail
-        
-        state: RememberMail
-            script:
-                $client.mail = $request.query;
-            go!: /ChoosePizza
+            
+        state: WhatsYourName
+            a: Напишите ваше имя
+            q: *
+            go!: /RememberName
+            
+            state: RememberName
+                script:
+                    $client.name = $request.query;
+                go!: /WhatsYourMail
+    
+        state: WhatsYourMail
+            a: Напишите ваш email
+            q: *
+            go!: /RememberMail
+            
+            state: RememberMail
+                script:
+                    $client.mail = $request.query;
+                go!: /Stupid
 
     state: Stupid
         a: Ну все, больше я нихера не умею! 🤗
