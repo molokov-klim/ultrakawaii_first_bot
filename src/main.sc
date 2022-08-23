@@ -5,8 +5,6 @@ theme: /
     state: Start
         q!: $regex</start>
         intent!: /Старт
-        script:
-            $session.client = {}
         go!: /Register
     
     state: Hello
@@ -38,8 +36,6 @@ theme: /
                 q: * @duckling.email *
                 script: 
                     $client.mail = $parseTree.value;
-                    $session.client['name'] = $client.name;
-                    $session.client['mail'] = $client.mail;
                 a: Зафиксировал: {{ $client.name }}, {{ $client.mail }}
                 go!: /Stupid
 
