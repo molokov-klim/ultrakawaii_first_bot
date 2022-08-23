@@ -2,17 +2,46 @@ require: slotfilling/slotFilling.sc
   module = sys.zb-common
 theme: /
 
-    state: Start
+    state: Start || modal = true
         q!: $regex</start>
-        a: Начнём.
+        script:
+            $context.name = {};
+            $context.mail = {};
+        a: Здаровати! 🤗
+        buttons:
+            "Здаровати!" -> ./WhatsYourName
+            
+    state: WhatsYourName
+    a: Напишите ваше имя
+    q: *
+    go!: /RememberName
+        
+        state: RememberName
+            script:
+                $client.name = $request.query;
+            go!: /WhatsYourMail
+
+    state: WhatsYourMail
+    a: Напишите ваш email
+    q: *
+    go!: /RememberMail
+        
+        state: RememberMail
+            script:
+                $client.mail = $request.query;
+            go!: /ChoosePizza
+
+    state: Stupid
+        a: Ну все, больше я нихера не умею! 🤗
+
 
     state: Hello
         intent!: /привет
-        a: Привет привет
+        a: Здаровати! 🤗
 
     state: Bye
         intent!: /пока
-        a: Пока пока
+        a: Пока 😢
 
     state: NoMatch
         event!: noMatch
@@ -21,3 +50,8 @@ theme: /
     state: Match
         event!: match
         a: {{$context.intent.answer}}
+        
+    
+        
+        
+        
