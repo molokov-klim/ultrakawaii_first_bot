@@ -95,12 +95,9 @@ theme: /
     state: Stories
         a: Отметил?
         
+    https://docs.google.com/spreadsheets/d/1vIEVjzH5SAnNt9HF5qJeM8CDiOHUmGJ1/edit?usp=sharing&ouid=107813419182735337605&rtpof=true&sd=true
     
     
-        
-    state: Stories
-        a: Вот твой подарочек! Это таблица с поисковыми запросами от пользователей по категориям товаров, мы с тобой будем делать важное дело - стыковать идею со спросом! А пока изучай что ищут люди на ВБ и готовься к вебинару 3-4 сентября!
-
 
     state: NoMatch || noContext = true
         event!: noMatch
