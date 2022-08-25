@@ -16,7 +16,7 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 11993670,
+    "id" : 12032441,
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
@@ -25,7 +25,7 @@
     } ],
     "priority" : 0
   }, {
-    "id" : 11993671,
+    "id" : 12032442,
     "path" : "/привет",
     "enabled" : true,
     "shared" : false,
