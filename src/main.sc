@@ -91,11 +91,10 @@ theme: /
                       
                       
         buttons:   
-            "Идет!" -> /Register/Gift
+            "Идет!" -> /Stories/Gift
         
         
         
-    
     state: Gift
         a: Уже отметил? Держи твой подарочек! Таблица запросов по категориям - стыкуем идею со спросом! https://docs.google.com/spreadsheets/d/1vIEVjzH5SAnNt9HF5qJeM8CDiOHUmGJ1/edit?usp=sharing&ouid=107813419182735337605&rtpof=true&sd=true
         
