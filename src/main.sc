@@ -91,7 +91,7 @@ theme: /
                       
                       
         buttons:   
-            "Идет!" -> /Stories/Gift
+            "Идет!" -> /Gift
         
         
         
