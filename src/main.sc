@@ -89,7 +89,7 @@ theme: /
     state: Stories
         a: Отмечай меня в сториз и я подарю тебе один полезный подарочек!
         buttons:
-                        "С радостью!" -> /Register/Motivation
+                        "Идет!" -> /Register/Motivation
     
      
 
