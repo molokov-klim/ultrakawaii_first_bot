@@ -79,14 +79,16 @@ theme: /
                     script:
                         $response.replies = $response.replies || [];
                         $response.replies.push({
-                            "type": "inlineButtons",
-                            "buttons": [{"text": "Я готов!", "url": "https://705402.selcdn.ru/bot_storage/1/bashit.jpg"}]
+                            "type": "image",
+                            "imageUrl": "https://705402.selcdn.ru/bot_storage/1/bashit.jpg"
                         });
+                    buttons:
+                        "Я готов!" -> /Stories
                     
 
+    state: Stories
+        a: Отмечай меня в сториз и я подарю тебе один полезный подарочек!
 
-    state: Stupid
-        a: Ну и на этом мои полномочия как-бы все
 
 
     state: NoMatch || noContext = true
