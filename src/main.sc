@@ -72,11 +72,10 @@ theme: /
                 q: *
                 script:
                     $client.wishlist = $parseTree.text 
-                go!: /Register/Motivation/1/MotivationPicture
+                go!: /Register/Motivation/1/ebsh
             
-                state: MotivationPicture
+                state: ebsh
                     a: А теперь скажи самому себе: Я ГОТОВ ЕБ@ШИТЬ РАДИ СВОЕЙ МЕЧТЫ 
-                    
                     buttons:
                         "Я готов!" -> /Stories
                     
@@ -89,7 +88,8 @@ theme: /
                             "type": "image",
                             "imageUrl": "https://705402.selcdn.ru/bot_storage/1/bashit2.jpg"
                         });
-        buttons:
+                        buttons:
+        
                         "Идет!" -> /Register/Gift
     
      
