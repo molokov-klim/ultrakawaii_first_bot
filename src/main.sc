@@ -88,8 +88,8 @@ theme: /
                             "type": "image",
                             "imageUrl": "https://705402.selcdn.ru/bot_storage/1/bashit2.jpg"
                         });
-                        buttons:
-        
+                        
+        buttons:
                         "Идет!" -> /Register/Gift
     
      
