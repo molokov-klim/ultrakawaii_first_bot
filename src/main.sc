@@ -90,8 +90,8 @@ theme: /
                         });
                       
                       
-buttons:     
-        "Идет!" -> /Register/Gift
+        buttons:   
+            "Идет!" -> /Register/Gift
         
         
         
