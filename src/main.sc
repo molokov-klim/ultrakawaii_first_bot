@@ -90,7 +90,7 @@ theme: /
         a: Отмечай меня в сториз и я подарю тебе один полезный подарочек!
      
     state: Stories
-        a: Отметил? Держи твой подарочек! Таблица запросов по категориям - стыкуем идею со спросом! https://docs.google.com/spreadsheets/d/1vIEVjzH5SAnNt9HF5qJeM8CDiOHUmGJ1/edit?usp=sharing&ouid=107813419182735337605&rtpof=true&sd=true
+        a: Уже отметил? Держи твой подарочек! Таблица запросов по категориям - стыкуем идею со спросом! https://docs.google.com/spreadsheets/d/1vIEVjzH5SAnNt9HF5qJeM8CDiOHUmGJ1/edit?usp=sharing&ouid=107813419182735337605&rtpof=true&sd=true
         
     
 
