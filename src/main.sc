@@ -80,7 +80,7 @@ theme: /
                         $response.replies = $response.replies || [];
                         $response.replies.push({
                             "type": "image",
-                            "imageUrl": "https://705402.selcdn.ru/bot_storage/1/bashit.jpg"
+                            "imageUrl": "https://705402.selcdn.ru/bot_storage/1/bashit2.jpg"
                         });
                     buttons:
                         "Я готов!" -> /Stories
