@@ -133,8 +133,6 @@ theme: /
         event!: noMatch
         random:
             a: Каваюша не понимает:(
-            a: Что вы имеете в виду? 
-            a: Ничего не пойму.
             a: Введи /start чтобы начать заново
 
 
@@ -158,7 +156,7 @@ theme: /
             errorState = /Test/2
         
         state: 1
-            a: state 1, {{ $session.ID }}, {{ session.Name }}, {{ session.Phone }}, {{ session.Mail }}, {{ session.Telegram }}
+            a: state , {{ $session.ID }}, {{ $session.Name }}, {{ $session.Phone }}, {{ $session.Mail }}, {{ $session.Telegram }}, 
             
         state: 2
             a: state 2
