@@ -23,7 +23,7 @@ theme: /
             state: Receive
                 state: 1
                     q: * @pymorphy.name *
-                    script: $client.name = $parseTree.text 
+                    script: $client.name = $parseTree.value
                     go!: /Register/GetName/Receive/1/Compliment
                     
                     state: Compliment
@@ -125,6 +125,9 @@ theme: /
     state: Gift
         a: Уже отметил? Держи твой подарочек! Таблица запросов по категориям - стыкуем идею со спросом! Изучи табличку и готовься к вебинару 3-4 сентября! https://docs.google.com/spreadsheets/d/1vIEVjzH5SAnNt9HF5qJeM8CDiOHUmGJ1/edit?usp=sharing&ouid=107813419182735337605&rtpof=true&sd=true
         
+        state: Спасибо
+            intent: /Благодарность
+            a: Пожалуйста! Я тебе всегда рад! Приходи еще и приводи друзей!
 
     state: NoMatch || noContext = true
         event!: noMatch

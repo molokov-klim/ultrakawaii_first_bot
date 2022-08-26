@@ -16,7 +16,28 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 12049099,
+    "id" : 12049320,
+    "path" : "/Благодарность",
+    "answer" : "Обращайся!",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "спасибо"
+    }, {
+      "text" : "Спасибо"
+    }, {
+      "text" : "пасиба"
+    }, {
+      "text" : "thanks"
+    }, {
+      "text" : "thank you"
+    }, {
+      "text" : "спс"
+    } ],
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "id" : 12049228,
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
@@ -25,7 +46,7 @@
     } ],
     "priority" : 0
   }, {
-    "id" : 12049100,
+    "id" : 12049229,
     "path" : "/привет",
     "enabled" : true,
     "shared" : false,
