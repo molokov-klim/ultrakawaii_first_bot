@@ -1,5 +1,8 @@
 require: slotfilling/slotFilling.sc
-  module = sys.zb-common
+    module = sys.zb-common
+  
+require: common.js
+    module = sys.zb-common
   
 require: core.js
   
@@ -156,10 +159,22 @@ theme: /
             errorState = /Test/2
         
         state: 1
-            a: state 1, {{ $session.client_id }}, {{ $session.ID }}, {{ $session.Name }}, {{ $session.Phone }}, {{ $session.Mail }}, {{ $session.Telegram }}, 
+            a: {{ $session.ID }}, {{ $session.Name }}, {{ $session.Phone }}, {{ $session.Mail }}, {{ $session.Telegram }}
+            script:
+                $response.replies = $response.replies || [];
+                $response.replies.push({
+                            "type": "text",
+                            "text": $session
+                        });
+                for (var i = 0; i < 10; i++) {
+                    $response.replies.push({
+                            "type": "text",
+                            "text": JSON.stringify($session, null, 4)
+                        });
+                    }
             
         state: 2
-            a: state 2
+            a: Error
             
             
             
