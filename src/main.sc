@@ -19,16 +19,28 @@ theme: /
 
         state: GetName
             a: Давай с тобой познакомимся. Меня зовут Каваюша. Я бот на курсе Молоковой Анны. Я буду твоим верным помощником. Как тебя зовут?
-            state: 1
-                q: * 
-                script: $client.name = $parseTree.text 
-                go!: /Register/GetName/1/Compliment
-
-                state: Compliment
-                    a: Какое классное имя, {{ $client.name }}! Человек с таким именем рожден быть успешным!
-                    buttons:
-                        "Да!" -> /Register/GetMail
-                
+            go!: /Register/GetName/Receive
+            state: Receive
+                state: 1
+                    q: * @pymorphy.name *
+                    script: $client.name = $parseTree.text 
+                    go!: /Register/GetName/Receive/1/Compliment
+                    
+                    state: Compliment
+                        a: Какое классное имя, {{ $client.name }}! Человек с таким именем рожден быть успешным!
+                        buttons:
+                            "Спасибо!" -> /Register/GetMail
+                            "Взаимно!" -> /Register/GetMail
+                            
+                        state: ClickButtons
+                            q: *
+                            a: Нажмите, пожалуйста, кнопку.
+                            go!: ..    
+                            
+                state: 2
+                    event: noMatch
+                    a: Не балуйтесь. Напишите ваше имя
+                    go!: /Register/GetName/Receive
 
         state: GetMail
             a: {{ $client.name }}, напиши мне свой email, чтобы я мог присылать тебе полезные материалы. Обещаю не спамить!
@@ -63,7 +75,12 @@ theme: /
         state: Finish
             a: Все получилось! Теперь давай с тобой посмотрим, что мы можем сделать полезного перед нашим вебинаром, чтобы он прошел максимально эффективно, независимо от того, пойдешь ли ты на дальнейшее обучение.
             buttons:
-                        "Давай!" -> /Register/Motivation
+                "Давай!" -> /Register/Motivation
+            
+            state: ClickButtons
+                q: *
+                a: Нажмите, пожалуйста, кнопку.
+                go!: ..   
 
 
         state: Motivation
@@ -78,6 +95,11 @@ theme: /
                     a: А теперь скажи самому себе: Я ГОТОВ ЕБ@ШИТЬ РАДИ СВОЕЙ МЕЧТЫ 
                     buttons:
                         "Я готов!" -> /Stories
+                        
+                    state: ClickButtons
+                        q: *
+                        a: Нажмите, пожалуйста, кнопку.
+                        go!: ..   
                     
 
     state: Stories
@@ -92,6 +114,11 @@ theme: /
                       
         buttons:   
             "Идет!" -> /Gift
+            
+        state: ClickButtons
+                q: *
+                a: Нажмите, пожалуйста, кнопку.
+                go!: ..   
         
         
         
