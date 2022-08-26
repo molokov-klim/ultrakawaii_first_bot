@@ -156,7 +156,7 @@ theme: /
             errorState = /Test/2
         
         state: 1
-            a: state , {{ $session.ID }}, {{ $session.Name }}, {{ $session.Phone }}, {{ $session.Mail }}, {{ $session.Telegram }}, 
+            a: state 1, {{ $session.client_id }}, {{ $session.ID }}, {{ $session.Name }}, {{ $session.Phone }}, {{ $session.Mail }}, {{ $session.Telegram }}, 
             
         state: 2
             a: state 2

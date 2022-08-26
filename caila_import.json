@@ -16,7 +16,7 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 12049703,
+    "id" : 12063992,
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
@@ -25,7 +25,7 @@
     } ],
     "priority" : 0
   }, {
-    "id" : 12049704,
+    "id" : 12063993,
     "path" : "/привет",
     "enabled" : true,
     "shared" : false,
@@ -34,7 +34,7 @@
     } ],
     "priority" : 0
   }, {
-    "id" : 12053024,
+    "id" : 12063994,
     "path" : "/Тест",
     "enabled" : true,
     "shared" : false,
@@ -50,7 +50,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 12049702,
+    "id" : 12063995,
     "path" : "/Благодарность",
     "answer" : "Обращайся!",
     "enabled" : true,
