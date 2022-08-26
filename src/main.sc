@@ -144,9 +144,25 @@ theme: /
         go!: /Register
 
 
-
+    state: Test
+        intent: /Тест
+        a: testing
         
-
+        GoogleSheets:
+            operationType = readDataFromCells
+            integrationId = 105169ae-0c15-4461-9f71-3d7c96451cd1
+            spreadsheetId = 1oQD0ERcCUQ0C22GTc67870Ljj-y6LWn-9jPCpXRKX8c
+            sheetName = 1
+            body = [{"varName":"ID","cell":"A1"}, {"varName":"Name","cell":"B1"}, {"varName":"Phone","cell":"C1"}, {"varName":"Mail","cell":"D1"}, {"varName":"Telegram","cell":"E1"}]
+            okState = /Test/1
+            errorState = /Test/2
         
-        
-        
+        state: 1
+            a: state 1, {{ $session.ID }}, {{ session.Name }}, {{ session.Phone }}, {{ session.Mail }}, {{ session.Telegram }}
+            
+        state: 2
+            a: state 2
+            
+            
+            
+            

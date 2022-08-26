@@ -16,7 +16,41 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 12049320,
+    "id" : 12049703,
+    "path" : "/пока",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "пока"
+    } ],
+    "priority" : 0
+  }, {
+    "id" : 12049704,
+    "path" : "/привет",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "привет"
+    } ],
+    "priority" : 0
+  }, {
+    "id" : 12053024,
+    "path" : "/Тест",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "тест"
+    }, {
+      "text" : "Тест"
+    }, {
+      "text" : "test"
+    }, {
+      "text" : "Test"
+    } ],
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "id" : 12049702,
     "path" : "/Благодарность",
     "answer" : "Обращайся!",
     "enabled" : true,
@@ -35,24 +69,6 @@
       "text" : "спс"
     } ],
     "patterns" : [ ],
-    "priority" : 0
-  }, {
-    "id" : 12049228,
-    "path" : "/пока",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "пока"
-    } ],
-    "priority" : 0
-  }, {
-    "id" : 12049229,
-    "path" : "/привет",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "привет"
-    } ],
     "priority" : 0
   } ],
   "entities" : [ ],
