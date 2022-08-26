@@ -16,7 +16,7 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 12034333,
+    "id" : 12049099,
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
@@ -25,7 +25,7 @@
     } ],
     "priority" : 0
   }, {
-    "id" : 12034334,
+    "id" : 12049100,
     "path" : "/привет",
     "enabled" : true,
     "shared" : false,
@@ -35,7 +35,7 @@
     "priority" : 0
   } ],
   "entities" : [ ],
-  "enabledSystemEntities" : [ "pymorphy.name", "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
+  "enabledSystemEntities" : [ "pymorphy.name", "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url", "mlps-obscene.obscene" ],
   "spellerDictionary" : [ ],
   "systemEntities" : [ {
     "name" : "mystem.geo",
@@ -132,7 +132,7 @@
     "enabled" : false
   }, {
     "name" : "mlps-obscene.obscene",
-    "enabled" : false
+    "enabled" : true
   }, {
     "name" : "zb.datetime",
     "enabled" : false
