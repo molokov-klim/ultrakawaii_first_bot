@@ -16,7 +16,7 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 12064799,
+    "id" : 12065513,
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
@@ -25,7 +25,7 @@
     } ],
     "priority" : 0
   }, {
-    "id" : 12064800,
+    "id" : 12065514,
     "path" : "/привет",
     "enabled" : true,
     "shared" : false,
@@ -34,23 +34,7 @@
     } ],
     "priority" : 0
   }, {
-    "id" : 12064801,
-    "path" : "/Тест",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "тест"
-    }, {
-      "text" : "Тест"
-    }, {
-      "text" : "test"
-    }, {
-      "text" : "Test"
-    } ],
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
-    "id" : 12064802,
+    "id" : 12065516,
     "path" : "/Благодарность",
     "answer" : "Обращайся!",
     "enabled" : true,
@@ -67,6 +51,26 @@
       "text" : "thank you"
     }, {
       "text" : "спс"
+    } ],
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "id" : 12065515,
+    "path" : "/readDataFromCells",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "readDataFromCells"
+    } ],
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "id" : 12105526,
+    "path" : "/writeDataToLine",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "writeDataToLine"
     } ],
     "patterns" : [ ],
     "priority" : 0

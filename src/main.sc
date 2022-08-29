@@ -145,9 +145,9 @@ theme: /
         go!: /Register
 
 
-    state: Test
-        intent: /Тест
-        a: testing
+    state: readDataFromCells
+        intent: /readDataFromCells
+        a: readDataFromCells
         
         GoogleSheets:
             operationType = readDataFromCells
@@ -155,8 +155,8 @@ theme: /
             spreadsheetId = 1oQD0ERcCUQ0C22GTc67870Ljj-y6LWn-9jPCpXRKX8c
             sheetName = 1
             body = [{"varName":"ID","cell":"A1"}, {"varName":"Name","cell":"B1"}, {"varName":"Phone","cell":"C1"}, {"varName":"Mail","cell":"D1"}, {"varName":"Telegram","cell":"E1"}]
-            okState = /Test/1
-            errorState = /Test/2
+            okState = /readDataFromCells/1
+            errorState = /readDataFromCells/2
         
         state: 1
             a: {{ $session.ID }}, {{ $session.Name }}, {{ $session.Phone }}, {{ $session.Mail }}, {{ $session.Telegram }}
@@ -177,5 +177,25 @@ theme: /
             a: Error
             
             
+    state: writeDataToLine
+        intent: /writeDataToLine
+        a: writeDataToLine
+        
+        GoogleSheets:
+            operationType = writeDataToLine
+            integrationId = 105169ae-0c15-4461-9f71-3d7c96451cd1
+            spreadsheetId = 1oQD0ERcCUQ0C22GTc67870Ljj-y6LWn-9jPCpXRKX8c
+            sheetName = 1
+            body = {"values":["None", "None", {{ $client.name }}, {{ $client.phone }}, {{ $client.mail }}, {{  $client.whishlist }}]}
+            okState = /writeDataToLine/1
+            errorState = /writeDataToLine/2
+        
+        
+        state: 1
+            a: ok
             
-            
+        state: 2
+            a: Error
+        
+        
+        
