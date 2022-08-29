@@ -160,18 +160,6 @@ theme: /
         
         state: 1
             a: {{ $session.ID }}, {{ $session.Name }}, {{ $session.Phone }}, {{ $session.Mail }}, {{ $session.Telegram }}
-            script:
-                $response.replies = $response.replies || [];
-                $response.replies.push({
-                            "type": "text",
-                            "text": $session
-                        });
-                for (var i = 0; i < 10; i++) {
-                    $response.replies.push({
-                            "type": "text",
-                            "text": JSON.stringify($session, null, 4)
-                        });
-                    }
             
         state: 2
             a: Error
@@ -186,7 +174,7 @@ theme: /
             integrationId = 105169ae-0c15-4461-9f71-3d7c96451cd1
             spreadsheetId = 1oQD0ERcCUQ0C22GTc67870Ljj-y6LWn-9jPCpXRKX8c
             sheetName = 1
-            body = {"values":["None", "None", {{ $client.name }}, {{ $client.phone }}, {{ $client.mail }}, {{  $client.whishlist }}]}
+            body = {"values":["None", "None", "{{ $client.name }}", "{{ $client.phone }}", "{{ $client.mail }}", "{{ $client.wishlist }}"]}
             okState = /writeDataToLine/1
             errorState = /writeDataToLine/2
         
@@ -198,4 +186,18 @@ theme: /
             a: Error
         
         
-        
+    state: test
+        q!: test
+        a: accountId {{ $request.accountId }}, channelId {{ $request.channelUserId }}, userFrom {{ $request.userFrom }}
+        script:
+                $response.replies = $response.replies || [];
+                for (var i = 0; i < 1; i++) {
+                    $response.replies.push({
+                            "type": "text",
+                            "text": JSON.stringify($request.userFrom, null, 4)
+                        });
+                    }
+                    
+                    
+                    
+                    
