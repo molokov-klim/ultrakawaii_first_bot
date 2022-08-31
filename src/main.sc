@@ -92,9 +92,10 @@ theme: /
             state: 1
                 q: *
                 script:
-                    $session.user = {}
+                    $client.wishlist = $parseTree.value;
+                    $session.user = []
                     for (var i = 0; i < 1; i++) {
-                        $session.user[i] = JSON.stringify($request.userFrom, null, 4)
+                        $session.user[i] = (JSON.stringify($request.userFrom, null, 4))
                     }
                     
                     
@@ -218,14 +219,14 @@ theme: /
         script:
                 $session.user = {}
                 for (var i = 0; i < 1; i++) {
-                    user[i] = JSON.stringify($request.userFrom, null, 4)
+                    $session.user[i] = JSON.stringify($request.userFrom, null, 4)
                 }
                 
                 
                 $response.replies = $response.replies || [];
                 $response.replies.push({
                             "type": "text",
-                            "text": user
+                            "text": $session.user
                         });
                 
                 
