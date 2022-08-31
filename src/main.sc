@@ -77,8 +77,9 @@ theme: /
                 
         state: Finish
             a: Все получилось! Теперь давай с тобой посмотрим, что мы можем сделать полезного перед нашим вебинаром, чтобы он прошел максимально эффективно, независимо от того, пойдешь ли ты на дальнейшее обучение.
+
             buttons:
-                "Давай!" -> /Register/Motivation
+                    "Давай!" -> /Register/Motivation
             
             state: ClickButtons
                 q: *
@@ -91,8 +92,34 @@ theme: /
             state: 1
                 q: *
                 script:
-                    $client.wishlist = $parseTree.text 
-                go!: /Register/Motivation/1/ebsh
+                    $session.user = {}
+                    for (var i = 0; i < 1; i++) {
+                        $session.user[i] = JSON.stringify($request.userFrom, null, 4)
+                    }
+                    
+                    
+                    $response.replies = $response.replies || [];
+                    $response.replies.push({
+                                "type": "text",
+                                "text": $session.user
+                            });
+                    
+                
+                # GoogleSheets:
+                #     operationType = writeDataToLine
+                #     integrationId = 105169ae-0c15-4461-9f71-3d7c96451cd1
+                #     spreadsheetId = 1oQD0ERcCUQ0C22GTc67870Ljj-y6LWn-9jPCpXRKX8c
+                #     sheetName = 1
+                #     body = {"values":["{{ $session.user[id] }}", "{{ $client.name }}", "{{ $client.phone }}", "{{ $client.mail }}", "{{ $client.wishlist }}"]}
+                #     okState = /Register/Motivation/ok
+                #     errorState = /Register/Motivation/ok
+                
+                # state: ok
+                #     go!: /Register/Motivation/1/ebsh
+                
+                # state: error
+                #     a: GoogleSheets error
+                    
             
                 state: ebsh
                     a: А теперь скажи самому себе: Я ГОТОВ ЕБ@ШИТЬ РАДИ СВОЕЙ МЕЧТЫ 
@@ -188,15 +215,22 @@ theme: /
         
     state: test
         q!: test
-        a: accountId {{ $request.accountId }}, channelId {{ $request.channelUserId }}, userFrom {{ $request.userFrom }}
         script:
-                $response.replies = $response.replies || [];
+                $session.user = {}
                 for (var i = 0; i < 1; i++) {
-                    $response.replies.push({
+                    user[i] = JSON.stringify($request.userFrom, null, 4)
+                }
+                
+                
+                $response.replies = $response.replies || [];
+                $response.replies.push({
                             "type": "text",
-                            "text": JSON.stringify($request.userFrom, null, 4)
+                            "text": user
                         });
-                    }
+                
+                
+                
+                
                     
                     
                     

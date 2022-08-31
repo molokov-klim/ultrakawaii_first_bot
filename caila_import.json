@@ -16,25 +16,31 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 12065513,
+    "id" : 12109086,
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "пока"
     } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
     "priority" : 0
   }, {
-    "id" : 12065514,
+    "id" : 12109087,
     "path" : "/привет",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "привет"
     } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
     "priority" : 0
   }, {
-    "id" : 12065516,
+    "id" : 12109088,
     "path" : "/Благодарность",
     "answer" : "Обращайся!",
     "enabled" : true,
@@ -52,26 +58,35 @@
     }, {
       "text" : "спс"
     } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 12065515,
+    "id" : 12109089,
     "path" : "/readDataFromCells",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "readDataFromCells"
     } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 12105526,
+    "id" : 12109090,
     "path" : "/writeDataToLine",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "writeDataToLine"
     } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
     "patterns" : [ ],
     "priority" : 0
   } ],
