@@ -16,7 +16,7 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 12171505,
+    "id" : 12176441,
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
@@ -28,7 +28,7 @@
     },
     "priority" : 0
   }, {
-    "id" : 12171506,
+    "id" : 12176442,
     "path" : "/привет",
     "enabled" : true,
     "shared" : false,
@@ -40,7 +40,7 @@
     },
     "priority" : 0
   }, {
-    "id" : 12171507,
+    "id" : 12176443,
     "path" : "/Благодарность",
     "answer" : "Обращайся!",
     "enabled" : true,
@@ -64,7 +64,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 12171508,
+    "id" : 12176444,
     "path" : "/readDataFromCells",
     "enabled" : true,
     "shared" : false,
@@ -77,7 +77,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 12171509,
+    "id" : 12176445,
     "path" : "/writeDataToLine",
     "enabled" : true,
     "shared" : false,

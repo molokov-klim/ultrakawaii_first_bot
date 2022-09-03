@@ -93,39 +93,25 @@ theme: /
                 q: *
                 script:
                     $client.wishlist = $parseTree.value;
-                    $session.user = []
-                    for (var i = 0; i < 1; i++) {
-                        $session.user[i] = (JSON.stringify($request.userFrom, null, 4))
-                    }
-                    
-                    
-                    $response.replies = $response.replies || [];
-                    $response.replies.push({
-                                "type": "text",
-                                "text": $session.user
-                            });
-                    
+                    var user = $request.userFrom['id']
+                    $session.user = user
+                go!: /Register/Motivation/1/ebsh
                 
-                # GoogleSheets:
-                #     operationType = writeDataToLine
-                #     integrationId = 105169ae-0c15-4461-9f71-3d7c96451cd1
-                #     spreadsheetId = 1oQD0ERcCUQ0C22GTc67870Ljj-y6LWn-9jPCpXRKX8c
-                #     sheetName = 1
-                #     body = {"values":["{{ $session.user[id] }}", "{{ $client.name }}", "{{ $client.phone }}", "{{ $client.mail }}", "{{ $client.wishlist }}"]}
-                #     okState = /Register/Motivation/ok
-                #     errorState = /Register/Motivation/ok
-                
-                # state: ok
-                #     go!: /Register/Motivation/1/ebsh
-                
-                # state: error
-                #     a: GoogleSheets error
-                    
-            
                 state: ebsh
                     a: А теперь скажи самому себе: Я ГОТОВ ЕБ@ШИТЬ РАДИ СВОЕЙ МЕЧТЫ 
-                    buttons:
-                        "Я готов!" -> /Stories
+                    GoogleSheets:
+                        operationType = writeDataToLine
+                        integrationId = 105169ae-0c15-4461-9f71-3d7c96451cd1
+                        spreadsheetId = 1oQD0ERcCUQ0C22GTc67870Ljj-y6LWn-9jPCpXRKX8c
+                        sheetName = 1
+                        body = {"values":["{{ $session.user }}", "{{ $client.name }}", "{{ $client.phone }}", "{{ $client.mail }}", "{{ $client.wishlist }}"]}
+                        okState = /Register/Motivation/1/ebsh/button
+                        errorState = /Register/Motivation/1/ebsh/button
+                    
+                    
+                    state: button
+                        buttons:
+                            "Я готов!" -> /Register/Motivation/1/Stories
                         
                     state: ClickButtons
                         q: *
@@ -133,32 +119,32 @@ theme: /
                         go!: ..   
                     
 
-    state: Stories
-        a: Отмечай меня в сториз и я подарю тебе один полезный подарочек!
-        script:
-                        $response.replies = $response.replies || [];
-                        $response.replies.push({
-                            "type": "image",
-                            "imageUrl": "https://705402.selcdn.ru/bot_storage/1/bashit2.jpg"
-                        });
-                      
-                      
-        buttons:   
-            "Идет!" -> /Gift
-            
-        state: ClickButtons
-                q: *
-                a: Нажмите, пожалуйста, кнопку.
-                go!: ..   
-        
-        
-        
-    state: Gift
-        a: Уже отметил? Держи твой подарочек! Таблица запросов по категориям - стыкуем идею со спросом! Изучи табличку и готовься к вебинару 3-4 сентября! https://docs.google.com/spreadsheets/d/1vIEVjzH5SAnNt9HF5qJeM8CDiOHUmGJ1/edit?usp=sharing&ouid=107813419182735337605&rtpof=true&sd=true
-        
-        state: Спасибо
-            intent: /Благодарность
-            a: Пожалуйста! Я тебе всегда рад! Приходи еще и приводи друзей!
+                state: Stories
+                    a: Отмечай меня в сториз и я подарю тебе один полезный подарочек!
+                    script:
+                                    $response.replies = $response.replies || [];
+                                    $response.replies.push({
+                                        "type": "image",
+                                        "imageUrl": "https://705402.selcdn.ru/bot_storage/1/bashit2.jpg"
+                                    });
+                                  
+                                  
+                    buttons:   
+                        "Идет!" -> /Register/Motivation/1/Gift
+                        
+                    state: ClickButtons
+                            q: *
+                            a: Нажмите, пожалуйста, кнопку.
+                            go!: ..   
+                    
+                    
+                    
+                state: Gift
+                    a: Уже отметил? Держи твой подарочек! Таблица запросов по категориям - стыкуем идею со спросом! Изучи табличку и готовься к вебинару 3-4 сентября! https://docs.google.com/spreadsheets/d/1vIEVjzH5SAnNt9HF5qJeM8CDiOHUmGJ1/edit?usp=sharing&ouid=107813419182735337605&rtpof=true&sd=true
+                    
+                    state: Спасибо
+                        intent: /Благодарность
+                        a: Пожалуйста! Я тебе всегда рад! Приходи еще и приводи друзей!
 
     state: NoMatch || noContext = true
         event!: noMatch
@@ -217,7 +203,7 @@ theme: /
     state: test
         q!: test
         script:
-                $session.user = {}
+                var user = $request.userFrom['id']
                 for (var i = 0; i < 1; i++) {
                     $session.user[i] = JSON.stringify($request.userFrom, null, 4)
                 }
@@ -226,7 +212,7 @@ theme: /
                 $response.replies = $response.replies || [];
                 $response.replies.push({
                             "type": "text",
-                            "text": $session.user
+                            "text": user
                         });
                 
                 
