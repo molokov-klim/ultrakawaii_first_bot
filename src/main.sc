@@ -120,12 +120,12 @@ theme: /
                     
 
                 state: Stories
-                    a: Отмечай меня в сториз и я подарю тебе один полезный подарочек!
+                    a: Отмечай меня в сториз и я подарю тебе один полезный подарочек! 
                     script:
                                     $response.replies = $response.replies || [];
                                     $response.replies.push({
                                         "type": "image",
-                                        "imageUrl": "https://705402.selcdn.ru/bot_storage/1/bashit2.jpg"
+                                        "imageUrl": "https://705402.selcdn.ru/bot_storage/1/nevertryneverknow.jpg"
                                     });
                                   
                                   
