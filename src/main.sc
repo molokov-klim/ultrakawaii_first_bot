@@ -98,7 +98,7 @@ theme: /
                 go!: /Register/Motivation/1/ebsh
                 
                 state: ebsh
-                    a: А теперь скажи самому себе: Я ГОТОВ ЕБ@ШИТЬ РАДИ СВОЕЙ МЕЧТЫ  
+                    a: А теперь скажи самому себе: Я ГОТОВ!  
                     GoogleSheets:
                         operationType = writeDataToLine
                         integrationId = 105169ae-0c15-4461-9f71-3d7c96451cd1
